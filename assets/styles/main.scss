@@ -1,0 +1,56 @@
+@import './components/utils/fonts';
+
+//Variables
+$radius: .5rem;
+$radius-toolbar: 1rem;
+
+//clrs
+$main-bg:#16161e;
+$scnd-bg:#1a1b26;
+$tabs: #222433;
+$label: #323751;
+
+$accent-clr: #bb8ac1;
+$accent-w: #fff;
+$accent-w2: #efefef;
+$accent-w3: #d3d3d3;
+
+$accent-b: #e3cab6;
+$accent-b2: #b79c87;
+$accent-b3: #9c795d;
+
+:root{
+    box-sizing: border-box;
+}
+*, ::before, ::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Cheyenne Sans', sans-serif;
+    text-rendering: geometricPrecision;
+}
+
+body {
+    background-color: $main-bg;
+    color: white;
+    padding: 5rem;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@import './components/utils/utils';
+@import './components/screen/screen';
+@import './components/clock/clock';
+@import './components/toolbar/toolbar';
+@import './components/tabs/tabs';
+@import './components/search/search';

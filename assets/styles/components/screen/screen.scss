@@ -1,0 +1,46 @@
+.screen {
+    display: none; height: 100%;
+    box-shadow: inset -.2rem 0 $accent-clr;
+    
+    animation: slide .55s cubic-bezier(.77,.19,.51,1.04);
+    
+    &-wrapper {
+        background-color: $scnd-bg;        
+        height: 65rem;
+        border-radius: $radius;
+        overflow: hidden;
+    }
+    
+    &__picture {
+        background-image: url(../imgs/fisher.png);
+        
+        background-repeat: no-repeat;
+        background-position-x: -100px;
+        background-size: cover;
+        width: 32%;
+    }
+
+    &__content {
+        flex-grow: 1;
+        padding: 2rem 0;
+    }
+}
+
+.screen.available { display: flex; }
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    
+    20% {
+        opacity: .1;
+        transform: translateX(-90%)
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

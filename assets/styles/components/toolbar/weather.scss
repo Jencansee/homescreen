@@ -1,0 +1,28 @@
+.weather {
+    display: flex;
+    align-items: center;
+    transition: .5s ease-in-out;
+    height: 100%;    
+    padding-right: 2rem;
+    
+    &:hover {
+        background-color: $accent-w3;      
+    }
+
+    &__temperature { 
+        color: $accent-w3;
+        border-bottom: .2rem solid transparent;        
+    }
+
+    &__icon {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    &__icon-wrap {
+        margin-right: .8rem;
+        width: 2.5rem;
+        height: 2.5rem;        
+    }
+    
+}
