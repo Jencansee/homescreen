@@ -1,7 +1,6 @@
 const API_KEY = 'a30f78ef6849e1b831e37eac57b22c9b',
     temperature = document.getElementById('temperature'),
-    tempIcon = document.getElementById('weather__icon').attributes.src;
-    console.log(tempIcon)
+    tempIcon = document.getElementById('weather__icon').attributes.src;    
 
 
 const requestWeather = (city)  => {
@@ -42,6 +41,5 @@ const requestWeather = (city)  => {
 
         });
 }
-
 
 requestWeather('aqtobe');
