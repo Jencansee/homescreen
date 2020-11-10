@@ -17,25 +17,25 @@ const requestWeather = (city)  => {
 
 			switch(weatherName.main){
 			case 'Clouds': 
-				tempIcon.textContent = '/imgs/weather/clouds.svg';
+				tempIcon.textContent = 'assets/imgs/weather/clouds.svg';
 				break;
 			case 'Clear':
-				tempIcon.textContent = '/imgs/weather/sunny.svg';
+				tempIcon.textContent = 'assets/imgs/weather/sunny.svg';
 				break;
 			case 'Rain':
-				tempIcon.textContent = '/imgs/weather/rain.svg';
+				tempIcon.textContent = 'assets/imgs/weather/rain.svg';
 				break;
 			case 'Snow':
-				tempIcon.textContent = '/imgs/weather/snow.svg';
+				tempIcon.textContent = 'assets/imgs/weather/snow.svg';
 				break;
 			case 'Thunderstorm':
-				tempIcon.textContent = '/imgs/weather/thunderstorm.svg';
+				tempIcon.textContent = 'assets/imgs/weather/thunderstorm.svg';
 				break;
 			case (['Mist', 'Haze', 'Dust', 'Fog', 'Smoke', 'Mist', 'Sand', 'Tornado'].includes(weatherName.main)):
-				tempIcon.textContent = '/imgs/weather/mist.svg';
+				tempIcon.textContent = 'assets/imgs/weather/mist.svg';
 				break;
 			default:
-				tempIcon.textContent = '/imgs/weather/sunny.svg';
+				tempIcon.textContent = 'assets/imgs/weather/sunny.svg';
 				break;
 			}
 
