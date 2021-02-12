@@ -1,28 +1,13 @@
 .weather {
-    display: flex;
-    align-items: center;
-    transition: .5s ease-in-out;
-    height: 100%;    
-    padding-right: 2rem;
+    display: flex; align-items: center; height: 100%; padding: 0 2rem; transition: .5s ease-in-out;
+
+    &__temperature {  color: $accent-w3; border-bottom: .2rem solid transparent; }
+    &__icon { width: 2.2rem; height: 2.2rem; }
+    &__icon-wrap { margin-right: .8rem; width: 2.5rem; height: 2.5rem; }
     
-    &:hover {
-        background-color: $accent-w3;      
+    &:hover { background-color: $accent-w3; color: black; 
+        .weather__icon { display: none; }
+        
     }
-
-    &__temperature { 
-        color: $accent-w3;
-        border-bottom: .2rem solid transparent;        
-    }
-
-    &__icon {
-        width: 2.2rem;
-        height: 2.2rem;
-    }
-
-    &__icon-wrap {
-        margin-right: .8rem;
-        width: 2.5rem;
-        height: 2.5rem;        
-    }
-    
+    &:hover .weather::after { opacity: 1; }
 }

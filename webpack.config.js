@@ -2,6 +2,7 @@ const path = require('path'),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
 	{ CleanWebpackPlugin } = require('clean-webpack-plugin'),
 	CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
 	mode: 'development',
 	entry: {
