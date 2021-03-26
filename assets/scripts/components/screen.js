@@ -28,6 +28,7 @@ document.onkeypress = e => {
         
 		// KeyHandler for search bar
 		if (document.activeElement !== searchField && key.toUpperCase() == 'S') {
+			e.preventDefault(); // prevents to put first 's' char inside of the input
 			search.classList.toggle('open');
 			searchField.focus();
 		}

@@ -1,40 +1,32 @@
 @font-face {
     font-family: 'Cheyenne Sans';
-    src: url('../fonts/cheyennesans-bold-webfont.woff2') format('woff2'),
-         url('../fonts/cheyennesans-bold-webfont.woff2') format('woff');
-    font-weight: bold;
-    font-style: bold;
-
+    src: url('../fonts/cheyennesans-bold.woff') format('woff');
+    font-weight: bold; font-style: bold;
 }
 
 @font-face {
     font-family: 'Cheyenne Sans';
-    src: url('../fonts/cheyennesans-extrabold-webfont.woff2') format('woff2'),
-         url('../fonts/cheyennesans-extrabold-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
+    src: url('../fonts/cheyennesans-extrabold.woff') format('woff');
+    font-weight: 700; font-style: normal;
 }
 
 @font-face {
     font-family: 'Cheyenne Sans';
-    src: url('../fonts/cheyennesans-light-webfont.woff2') format('woff2'),
-         url('../fonts/cheyennesans-light-webfont.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-
+    src: url('../fonts/cheyennesans-light.woff') format('woff');
+    font-weight: 100; font-style: normal;
 }
 @font-face {
     font-family: 'Cheyenne Sans';
-    src: url('../fonts/cheyennesans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/cheyennesans-regular-webfont.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-
+    src: url('../fonts/cheyennesans-regular.woff') format('woff');
+    font-weight: 300; font-style: normal;
 }
 @font-face {
     font-family: 'Cheyenne Sans';
-    src: url('../fonts/cheyennesans-semibold-webfont.woff2') format('woff2'),
-         url('../fonts/cheyennesans-semibold-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
+    src: url('../fonts/cheyennesans-semibold.woff') format('woff');
+    font-weight: 500; font-style: normal;
+}
+
+@font-face {
+  font-family: 'weafont'; src: url('../fonts/weather/weafont.ttf') format('truetype');
+  font-weight: normal; font-style: normal; 
 }

@@ -19,33 +19,25 @@ $accent-b: #e3cab6;
 $accent-b2: #b79c87;
 $accent-b3: #9c795d;
 
-:root{
-    box-sizing: border-box;
-}
-*, ::before, ::after {
-    box-sizing: inherit;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
+//fonts
+$main-font: 'Cheyenne Sans';
+$weather-font: weafont;
+
+:root { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; padding: 0; margin: 0; list-style: none; }
 
 html {
-    font-size: 62.5%;
-    font-family: 'Cheyenne Sans', sans-serif;
-    text-rendering: geometricPrecision;
+  font-size: 62.5%;
+  font-family: $main-font, sans-serif;
+  text-rendering: geometricPrecision;
 }
 
 body {
-    background-color: $main-bg;
-    color: white;
-    padding: 5rem;
+  background-color: $main-bg;
+  color: white; padding: 5rem;
 }
 
-.app {
-    width: 100%;
-    height: 100%;
-}
-
+.app { width: 100%; height: 100%; }
 
 
 @import './components/utils/utils';

@@ -2,3 +2,7 @@ node_modules
 build
 dist
 .vs
+.vscode
+.github
+.env
+package-lock.json

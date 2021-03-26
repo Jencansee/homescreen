@@ -1,6 +1,6 @@
 const API_KEY = 'a30f78ef6849e1b831e37eac57b22c9b',
 	temperature = document.getElementById('temperature'),
-	tempIcon = document.getElementById('weather__icon').attributes.src;    
+	tempIcon = document.getElementById('weather__icon');
 
 
 const requestWeather = (city)  => {
@@ -12,30 +12,30 @@ const requestWeather = (city)  => {
                 
 
 			temperature.innerText = `${main.temp} °C`;
-			console.log(data);
+			// console.log(data);
 			console.log(weatherName.description.toUpperCase());
 
 			switch(weatherName.main){
 			case 'Clouds': 
-				tempIcon.textContent = 'assets/imgs/weather/clouds.svg';
+				tempIcon.textContent = 'c';
 				break;
 			case 'Clear':
-				tempIcon.textContent = 'assets/imgs/weather/sunny.svg';
+				tempIcon.textContent = 'd';
 				break;
 			case 'Rain':
-				tempIcon.textContent = 'assets/imgs/weather/rain.svg';
+				tempIcon.textContent = 'r';
 				break;
 			case 'Snow':
-				tempIcon.textContent = 'assets/imgs/weather/snow.svg';
+				tempIcon.textContent = 's';
 				break;
 			case 'Thunderstorm':
-				tempIcon.textContent = 'assets/imgs/weather/thunderstorm.svg';
+				tempIcon.textContent = 't';
 				break;
 			case (['Mist', 'Haze', 'Dust', 'Fog', 'Smoke', 'Mist', 'Sand', 'Tornado'].includes(weatherName.main)):
-				tempIcon.textContent = 'assets/imgs/weather/mist.svg';
+				tempIcon.textContent = 'm';
 				break;
 			default:
-				tempIcon.textContent = 'assets/imgs/weather/sunny.svg';
+				tempIcon.textContent = 'd';
 				break;
 			}
 

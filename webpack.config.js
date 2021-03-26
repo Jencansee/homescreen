@@ -36,13 +36,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.scss$/i,
-				use: [
-					// Creates `style` nodes from JS strings
-					'style-loader',
-					// Translates CSS into CommonJS
-					'css-loader',					
-					'sass-loader',
-				],
+				use: [ 'style-loader', 'css-loader', 'sass-loader'],
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,
@@ -53,7 +47,13 @@ module.exports = {
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: [
-					'file-loader',
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'fonts/'
+						}
+					}
 				],
 			},
 		],
