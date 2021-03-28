@@ -1,7 +1,11 @@
 const API_KEY = 'a30f78ef6849e1b831e37eac57b22c9b',
+	weatherBox = document.getElementById('weather'),
+	weatherInput = document.querySelector('.settings__input.settings__input_weather'),
 	temperature = document.getElementById('temperature'),
-	tempIcon = document.getElementById('weather__icon');
+	tempIcon = document.getElementById('weather__icon'),
+	storage = window.localStorage;
 
+let getWeatherCity = storage.getItem('weatherCity');
 
 const requestWeather = (city)  => {
 	fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`)
@@ -9,11 +13,10 @@ const requestWeather = (city)  => {
 		.then(data => {
 			const main = data.main,
 				weatherName = data.weather[0];
-                
 
 			temperature.innerText = `${main.temp} °C`;
-			// console.log(data);
-			console.log(weatherName.description.toUpperCase());
+			//- fill tooltip text with weather description
+			weatherBox.title = weatherName.description.toUpperCase();
 
 			switch(weatherName.main){
 			case 'Clouds': 
@@ -38,8 +41,21 @@ const requestWeather = (city)  => {
 				tempIcon.textContent = 'd';
 				break;
 			}
-
 		});
 };
+
+getWeatherCity ? requestWeather(getWeatherCity) : requestWeather('Cornwall');
+
+weatherInput.addEventListener('keydown', e => {
+	if (e.key == 'Enter') {
+		storage.removeItem('weatherCity');
+		storage.setItem('weatherCity', weatherInput.value);
+
+		let newWeatherCity = storage.getItem('weatherCity');
+		requestWeather(newWeatherCity);
+
+		// TODO make animation that when enter is pressed and no more action needed
+	} 
+});
 
 export default requestWeather;

@@ -8,11 +8,44 @@
 </head>
 <body>    
     <div class="app">
-        <div class="search-wrapper" id="search-wrapper">
-            <div class="search-container">
-                <input class="search" id="search" type="text" spellcheck="false" placeholder="Search">            
-                <ul class="search__engines" id="search-engines"></ul>
+        <div class="backdrop">
+          <div class="search-container">
+            <input class="search" id="search" type="text" spellcheck="false" placeholder="Search">
+            <ul class="search__engines" id="search-engines"></ul>
+          </div>
+          <div class="settings">
+            <h2>Settings</h2>  
+            <div class="settings__options">
+
+              <div class="settings__option">
+                <div class="settings__information">
+                  <div class="settings__option-name">City</div>
+                  <div class="settings__option-description">Write name of a city to display its weather in toolbar</div>
+                </div>
+                <div class="settings__information">
+                  <div class="settings__current-city-wrapper">
+                    Current city: 
+                    <span class="settings__current-city"></span>
+                  </div>
+                  <input type="text" name="city" class="settings__input settings__input_weather" placeholder="e.g. Cornwall">
+                </div>
+              </div>
+              
+              <div class="settings__option">
+                <div class="settings__information">
+                  <div class="settings__option-name">Time zone</div>
+                  <div class="settings__option-description">Choose time zone for main clocks</div>
+                </div>
+              </div>
+              
+              <div class="settings__option">
+                <div class="settings__information">
+                  <div class="settings__option-name">Currency</div>
+                  <div class="settings__option-description">Choose default currency for converting feature</div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
 
         <div class="wrapper">
@@ -22,7 +55,7 @@
         <div class="wrapper screen-wrapper" id="screen-wrapper">
             <div class="screen available" id="screen">
                 <div class="screen__picture" id="screen__picture"></div>
-                <div class="screen__content">                    
+                <div class="screen__content">
                     <div class="content__wrap">
                         <div class="content__label">Design</div>
                         <ul class="content__tabs">                            
@@ -305,7 +338,7 @@
                     <div class="suji" data-suji="5">五</div>
                 </div>
 
-                <div class="weather">
+                <div class="weather" id="weather">
                     <div class="weather__icon" id="weather__icon"></div>
                     <div class="weather__temperature" id="temperature"></div>
                 </div>

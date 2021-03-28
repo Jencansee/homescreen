@@ -9,9 +9,13 @@ $main-bg:#16161e;
 $scnd-bg:#1a1b26;
 $tabs: #222433;
 $label: #323751;
+$inputClr: #232323;
 
 $accent-clr: #bb8ac1;
 $accent-w: #fff;
+$accent-w_opacity: rgba(255, 255, 255, .03);
+$accent-w_opacity2: rgba(255, 255, 255, .06);
+
 $accent-w2: #efefef;
 $accent-w3: #d3d3d3;
 
@@ -39,9 +43,23 @@ body {
 
 .app { width: 100%; height: 100%; }
 
+input {
+  border: none;
+  &:focus-visible { outline: none; }
+}
+
 
 @import './components/utils/utils';
+@import './components/utils/backdrop/backdrop';
 @import './components/screen/screen';
 @import './components/toolbar/toolbar';
 @import './components/tabs/tabs';
 @import './components/search/search';
+@import './components/settings/setttings';
+
+
+
+
+//TODO right line should vary in color per screen 
+//TODO generate new ideas about imgs at the right side
+//TODO make it adaptive to big screens and 16:10

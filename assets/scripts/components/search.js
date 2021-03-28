@@ -5,6 +5,7 @@ const EnginesList = document.getElementById('search-engines'),
 		w: ['https://en.wikipedia.org/w/index.php?search=', 'Wikipedia'],
 		y: ['https://youtube.com/results?search_query=', 'Youtube'],
 		ya: ['https://yandex.ru/search/?text=', 'Yandex'],
+		ch: ['https://4chansearch.com/?q=', '4chanSearch'],
 		hh: ['https://hh.ru/search/vacancy?L_save_area=false&fromSearchLine=true&st=searchVacancy&text=', 'HeadHunter'],
 		mdn: ['https://developer.mozilla.org/en-US/search?q=', 'MDN']
 	};

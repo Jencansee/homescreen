@@ -2,8 +2,21 @@ import tabActivator from './utils/tabActivator';
 import searchBar from './search';
 
 const toolbar = document.getElementById('toolbar'),
-	search = document.getElementById('search-wrapper'),
+	backdrop = document.querySelector('.backdrop'),
+	modal = [...backdrop.children],
 	searchField = document.getElementById('search');
+
+// functions 
+function closeModal() {
+	backdrop.classList.remove('open');
+	modal.forEach(el => el.style.display = 'none');
+}
+
+function openModal(childNum) {
+	backdrop.classList.add('open');
+	modal[childNum].style.display = 'block'; 
+}
+
 
 //click handler
 toolbar.addEventListener('click', e => {
@@ -16,30 +29,36 @@ toolbar.addEventListener('click', e => {
 	}
 });
 
-//keypress handler
-document.onkeypress = e => {
+
+//onkeydown handler
+window.onkeydown = e => {
 	if (e) {        
 		let key = e.key;
-
+		
+		// suji in toolbar
 		if (Number.isInteger(parseInt(key)) && document.activeElement !== searchField) {
 			tabActivator('#screen-suji > div', `#screen-suji div:nth-child(${key})`, 'genzai');
 			tabActivator('#screen-wrapper > div', `#screen-wrapper > div:nth-child(${key})`, 'available');
 		}        
         
-		// KeyHandler for search bar
-		if (document.activeElement !== searchField && key.toUpperCase() == 'S') {
-			e.preventDefault(); // prevents to put first 's' char inside of the input
-			search.classList.toggle('open');
+		//	search bar
+		if (document.activeElement !== searchField && key.toUpperCase() == 'S' && !backdrop.classList.contains('open')) {
+			e.preventDefault(); // prevents to put first char inside of the input
+			openModal(0);
 			searchField.focus();
 		}
-	}
-};
 
-search.onkeydown = e => {
-	//ESC key	
-	if (search.classList.contains('open') && e.key == 'Escape') {
-		search.classList.remove('open');
-		searchField.blur();
+		// settings, triggers on backtick key
+		if (document.activeElement !== searchField && key == '`' && !backdrop.classList.contains('open')) {
+			openModal(1);
+			document.querySelector('.settings__current-city').textContent = window.localStorage.getItem('weatherCity');
+		}
+
+		// Escape!
+		if (backdrop.classList.contains('open') && e.key == 'Escape') {
+			closeModal();
+			searchField.blur();
+		}
 	}
 };
 

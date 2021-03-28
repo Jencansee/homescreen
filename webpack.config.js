@@ -59,3 +59,5 @@ module.exports = {
 		],
 	},
 };
+
+// TODO DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.
