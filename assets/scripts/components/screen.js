@@ -4,7 +4,8 @@ import searchBar from './search';
 const toolbar = document.getElementById('toolbar'),
 	backdrop = document.querySelector('.backdrop'),
 	modal = [...backdrop.children],
-	searchField = document.getElementById('search');
+	searchField = document.getElementById('search'),
+	currentCityTitle = document.querySelector('.settings__current-city');
 
 // functions 
 function closeModal() {
@@ -51,7 +52,9 @@ window.onkeydown = e => {
 		// settings, triggers on backtick key
 		if (document.activeElement !== searchField && key == '`' && !backdrop.classList.contains('open')) {
 			openModal(1);
-			document.querySelector('.settings__current-city').textContent = window.localStorage.getItem('weatherCity');
+      
+			window.localStorage.getItem('weatherCity') ? currentCityTitle.textContent = window.localStorage.getItem('weatherCity') 
+				: currentCityTitle.textContent = 'Cornwall';
 		}
 
 		// Escape!
