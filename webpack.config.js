@@ -1,7 +1,8 @@
 const path = require('path'),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
 	{ CleanWebpackPlugin } = require('clean-webpack-plugin'),
-	CopyPlugin = require('copy-webpack-plugin');
+	CopyPlugin = require('copy-webpack-plugin'),
+	Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	mode: 'development',
@@ -20,6 +21,7 @@ module.exports = {
 			title: '!t',
 			template: 'assets/index.html'
 		}),
+		new Dotenv(),
 		new CopyPlugin ({
 			patterns: [
 				{ from: 'assets/imgs', to: 'assets/imgs' },
@@ -59,5 +61,3 @@ module.exports = {
 		],
 	},
 };
-
-// TODO DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.

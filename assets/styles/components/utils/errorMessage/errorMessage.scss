@@ -1,0 +1,39 @@
+.errorMessage {
+  position: absolute; display: none !important;
+  
+  display: flex; justify-content: flex-start; align-items: center;
+
+  box-shadow: 4px 4px 2px 0 #232323cf;
+  padding: 1.4rem 1.6rem 1.4rem 1rem;
+  background-color: #f1f1f1;
+
+  &::before { 
+    content: '\26A0';
+    color: #e2b526;
+    font-size: 2.8rem;
+    line-height: 0;
+    margin-bottom: 0.2rem;
+    margin-right: 1.2rem;
+  }
+  &::after { 
+    content: 'Something is creating script errors';
+    color: #5a5a5a;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: Verdana;
+  }
+}
+
+.missing { 
+  background: url('/assets/imgs/missing-textures.jpg') !important;
+  & > *, .screen__picture  { background-image: url('/assets/imgs/missing-textures.jpg') !important; }
+  .screen__picture { background-size: 100% 100%; }
+  .screen-wrapper, #toolbar { background: transparent; }
+  .content__label, .content__link, .clock { color: #fc0d09; animation: .6s errorColor ease-in-out alternate infinite; }
+  .content__tab:nth-child(2n+1) { background: transparent; }
+}
+
+@keyframes errorColor {
+  0% { color: #fc0d09; }
+  50% {  color: darken(#fc0d09, 5); }
+  100% { color: darken(#fc0d09, 15); } }
