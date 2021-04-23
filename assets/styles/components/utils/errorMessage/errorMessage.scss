@@ -1,7 +1,7 @@
 .errorMessage {
-  position: absolute; display: none !important;
+  position: absolute; display: flex; justify-content: flex-start; align-items: center;
   
-  display: flex; justify-content: flex-start; align-items: center;
+  display: none;
 
   box-shadow: 4px 4px 2px 0 #232323cf;
   padding: 1.4rem 1.6rem 1.4rem 1rem;
