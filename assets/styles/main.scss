@@ -27,6 +27,10 @@ $accent-b3: #9c795d;
 $main-font: 'Cheyenne Sans';
 $weather-font: weafont;
 
+//resolutions
+$mobileWidth: 770px;
+$xlWidth: 2000px;
+
 :root { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; padding: 0; margin: 0; list-style: none; }
 
@@ -48,6 +52,9 @@ input {
   &:focus-visible { outline: none; }
 }
 
+@media(min-width: $xlWidth) {
+  .app { width: 80vw; margin: 0 auto; }
+}
 
 @import './components/utils/utils';
 @import './components/utils/backdrop/backdrop';

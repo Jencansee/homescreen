@@ -55,13 +55,14 @@ const requestWeather = city => {
 			.then(res => res.json())
 			.then(data => {
 				const main = data.main;
-				console.log('API CALL');
+				console.log('WEATHER API CALL');
 				// storage
 				let weatherTemp = main.temp, 
 					weatherTitle = data.weather[0].main,
 					weatherDesc = data.weather[0].description,
 					timestamp = new Date().getHours();
 				
+				storage.setItem('weatherCity', city);
 				storage.setItem('weatherTemp', weatherTemp);
 				storage.setItem('weatherTitle', weatherTitle);
 				storage.setItem('weatherDesc', weatherDesc);

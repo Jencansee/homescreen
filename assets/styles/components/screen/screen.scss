@@ -17,19 +17,23 @@
         }
     }
     
-    &__picture {
-        background-image: url(../imgs/fisher.png);
-        
-        background-repeat: no-repeat;
-        background-position-x: -100px;
-        background-size: cover;
-        width: 32%;
-    }
+    
 
     &__content { flex-grow: 1; padding: 2rem 0; }
 }
 
 .screen.available { display: flex; }
+
+@media(min-width: $mobileWidth) {
+  .screen__picture {
+    background-image: url(../imgs/stairs.png);
+    background-repeat: no-repeat;
+    background-position-x: -100px;
+    background-size: cover;
+    width: 32%;
+  }
+}
+
 
 @keyframes slide {
     0% {
