@@ -12,7 +12,7 @@ const EnginesList = document.getElementById('search-engines'),
 
 // creates list of engines in search overlay
 Object.keys(Engines).map(el => { 
-	let engineAbr = document.createElement("LI");
+	let engineAbr = document.createElement('LI');
 	engineAbr.innerText = `!${el}`;
 	EnginesList.appendChild(engineAbr);
 });
@@ -24,7 +24,7 @@ const searchBar = e => {
 	
 	let splited = fieldValue.split(' '),
 		prefixKey = splited[0],
-		engine = Engines['d'][0],
+		engine = Engines['s'][0],
 		cutQuery = 0;
 
 	if (e.key == 'Enter') {
