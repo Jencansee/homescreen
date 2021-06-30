@@ -1,4 +1,5 @@
 const path = require('path'),
+	WebpackMessages = require('webpack-messages'),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
 	{ CleanWebpackPlugin } = require('clean-webpack-plugin'),
 	CopyPlugin = require('copy-webpack-plugin'),
@@ -16,6 +17,10 @@ module.exports = {
 		port: 3333,
 	},
 	plugins: [
+		new WebpackMessages({
+			name: 'client',
+			logger: str => console.log(`>> ${str}`)
+		}),
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
 			title: '!t',
