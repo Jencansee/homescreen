@@ -2,9 +2,9 @@
 I made this homescreen for myself, for quick and handy use of services that I need with support of key prompts.
 
 ## Prerequisites & Setting Up
-Before using this homescreen you need to compile it, in order to compile you should have Node.js and npm to be installed on your PC.
+Before using this homescreen you need to compile it, in order to compile you should have [node.js and npm](https://nodejs.org/en/) to be installed on your PC.
 
-After that run
+Now you need to install all required dependecies to run the build:
 
 `npm i`
 

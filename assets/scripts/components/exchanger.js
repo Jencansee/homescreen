@@ -2,11 +2,11 @@ const API_KEY = process.env.EXCHANGE_API,
 	BASE_CURRENCY = process.env.BASE_CURRENCY,
 	CURRENCY_LIST = process.env.CURRENCY_LIST.split(', ');
 
-//storage
 const storage = window.localStorage;
 const currentExchangeDate = storage.getItem('lastExchange'),
 	currentTime = new Date().getTime().toString();
 
+// exchange data updates once a day
 if (currentExchangeDate < currentTime.substring(0, 10)) {
 	fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${BASE_CURRENCY}`)
 		.then(res => res.json())
@@ -28,9 +28,17 @@ if (currentExchangeDate < currentTime.substring(0, 10)) {
 // Object with all saved in localStorage exchange rates 
 let currentExchangeRatesObject = {};
 CURRENCY_LIST.forEach(el => currentExchangeRatesObject[el] = storage.getItem(el));
-
-// main function - work with currencies | currency code in ISO 4217
-window.exchanger = (amount, exchangedCurrency, toExchanged) => {
+/**
+   * @description Main function to work w/ currencies
+   * @param {number} amount amount to be exchanged
+   * @param {string} exchangedCurrency currency code in ISO 4217
+   * @param {boolean} toExchanged set true to exchange to your default currency (WANTED_CURRENCY -> DEFAULT_CURRENCY)
+   * @example exchanger(10000, 'CNY')
+   * @returns 890 CNY 
+   * @example exchanger(20, 'USD', true)
+   * @returns 1438 RUB
+   * */ 
+const exchanger = (amount, exchangedCurrency, toExchanged) => {
 	let currencyCode = exchangedCurrency.toUpperCase(),
 		currentExchageRate = currentExchangeRatesObject[currencyCode],
 		result;
@@ -44,5 +52,4 @@ window.exchanger = (amount, exchangedCurrency, toExchanged) => {
 	}
 };
 
-// console.log(exchanger(10000, 'RUB'));
-// console.log(exchanger(20, 'USD', true));
+export default exchanger;

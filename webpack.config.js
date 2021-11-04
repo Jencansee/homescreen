@@ -15,6 +15,8 @@ module.exports = {
 	devServer: {
 		contentBase: './dist',
 		port: 3333,
+    host: '0.0.0.0',
+    useLocalIp: true
 	},
 	plugins: [
 		new WebpackMessages({
